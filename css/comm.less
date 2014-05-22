@@ -1,0 +1,19 @@
+@import 'inc/reset.less';
+@import 'inc/util.less';
+@import 'inc/var.less';
+
+// 初始化
+.reset();
+
+// 全局样式
+body {
+    font: @default-font-size/1.5 @default-font-family;
+    color: @default-font-color;
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
