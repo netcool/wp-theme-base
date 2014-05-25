@@ -19,6 +19,91 @@ a {
     }
 }
 
+// 组件样式 表格
+.m-table {
+    width: 100%;
+    font-size: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    border-collapse: collapse;
+    line-height: 1.4;
+    margin-bottom: 15px;
+
+    thead {
+        background: #fafafa;
+    }
+
+    tbody {
+        background-color: #fff;
+
+        tr:hover {
+            background-color: #ffffcc;
+        }
+    }
+
+    td,
+    th {
+        border: 1px solid #ddd;
+        padding: 7px;
+        word-wrap: break-word;
+        word-break: break-all;
+        overflow: hidden;
+    }
+}
+
+// 组件样式 按钮
+.m-btn {
+    height: 26px;
+    line-height: 24px;
+    vertical-align: middle;
+    border: none;
+    background: @default-main-color;
+    border: 1px solid @default-main-color;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+        border: 1px solid @default-main-border-color;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+    }
+
+    &:active {
+        border: 1px solid @default-main-border-color;
+        box-shadow: none;
+    }
+
+    &[disabled] {
+        background: #ccc;
+        border: #ccc;
+
+        &:hover {
+            border: #aaa;
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+    }
+}
+
+// 组件样式 输入框
+.m-input {
+    font-size: 12px;
+    border: 1px solid #cccccc;
+    background: #fff;
+    outline: none;
+    padding: 3px;
+    vertical-align: middle;
+    height: 18px;
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.05);
+
+    &:focus {
+        box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.15);
+        border: 1px solid @default-main-color;
+    }
+}
+
 // 头部样式
 #header {
     #inner-header {

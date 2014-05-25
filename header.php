@@ -23,8 +23,8 @@
 		</div>
 		<div id="search" class="clearfix">
 			<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<input type="text" id="search-input" name="s" />
-				<input type="submit" id="search-button" value="搜索" />
+				<input type="text" class="m-input" id="search-input" name="s" />
+				<input type="submit" class="m-btn" id="search-button" value="搜索" />
 			</form>
 		</div>
 	</div>	
