@@ -1,1 +1,60 @@
 @import 'css/comm.less';
+
+#banner {
+    height: 350px;
+    background-color: #eee;
+
+    #inner-banner {
+        .size(980px, 350px);
+    }
+}
+
+#content {
+    .clearfix();
+    width: 980px;
+    margin: 20px auto;
+
+    #content-l,
+    #content-c,
+    #content-r {
+        width: 310px;
+        float: left;
+
+        .content-title {
+            span {
+                font-size: 14px;
+
+            }
+
+            em {
+                float: right;
+            }
+        }
+
+        .content-main {
+
+        }
+
+        ul {
+            list-style: inside square;
+
+            li {
+                .time {
+                    float: right;
+                }
+            }
+        }
+    }
+
+    #content-l {
+        margin-right: 25px;
+    }
+
+    #content-c {
+        margin-right: 25px;
+    }
+
+    #content-r {
+
+    }
+}

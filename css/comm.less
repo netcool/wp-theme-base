@@ -12,8 +12,71 @@ body {
 }
 
 a {
+    color: @default-link-color;
     text-decoration: none;
     &:hover {
         text-decoration: underline;
+    }
+}
+
+// 头部样式
+#header {
+    #inner-header {
+        .size(980px, 70px);
+        .clearfix();
+        margin: 0 auto;
+
+        #logo {
+            .size(200px, 70px);
+            line-height: 70px;
+            float: left;
+            font-size: 32px;
+        }
+
+        #nav {
+            float: left;
+            height: 70px;
+            .menu-nav-container {
+                ul {
+                    .reset-list();
+
+                    li {
+                        float: left;
+
+                        a {
+                            .size(100px, 70px);
+                            display: block;
+                            line-height: 70px;
+                            text-align: center;
+
+                            &:hover {
+                                background-color: #f4f4f4;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #search {
+            .size(300px, 70px);
+            line-height: 70px;
+            float: right;
+        }
+    }
+}
+
+// 底部样式
+#footer {
+    border-top: 1px solid #ececec;
+    background-color: #f4f4f4;
+    padding: 10px 0 20px;
+
+    #inner-footer {
+        width: 980px;
+        margin: 0 auto;
+        text-align: center;
+        color: #999;
     }
 }
