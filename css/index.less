@@ -17,54 +17,26 @@
 #content {
     .clearfix();
     width: 980px;
-    margin: 30px auto 40px;
+    margin: 30px auto;
 
-    #content-l,
-    #content-c,
-    #content-r {
+    .content-row {
+        .clearfix();
+    }
+
+    #content-left,
+    #content-center,
+    #content-right {
         width: 310px;
         float: left;
         font-size: 14px;
 
-        .content-title {
-            .clearfix();
-            border-bottom: 1px solid #ececec;
-            height: 27px;
-            line-height: 27px;
-
-            span {
-                .ellipsis();
-                display: block;
-                max-width: 250px;
-                float: left;
-                font-size: 16px;
-                color: @default-font-color;
-                font-weight: bold;
-                border-bottom: 1px solid @default-font-color;
-                margin-bottom: -1px;
-            }
-
-            em {
-                float: right;
-                font-size: 12px;
-            }
-        } 
-    }
-
-    #content-l {
-        margin-right: 25px;
-
-        .content-main {
+        div.content-main {
             margin-top: 10px;
             line-height: 1.6;
             margin-bottom: 10px;
         }
-    }
 
-    #content-c {
-        margin-right: 25px;
-
-        ul {
+        ul.content-main {
             .reset-list();
             margin-top: 5px;
 
@@ -88,5 +60,78 @@
                 }
             }
         }
+    }
+
+    #content-left {
+        margin-right: 25px;
+    }
+
+    #content-center {
+        margin-right: 25px;
+    }
+
+    #content-bottom {
+        width: 980px;
+        margin: 10px auto 0;
+
+        #img-carousel {
+            height: 180px;
+            margin-bottom: 10px;
+            box-shadow: none;
+            border: 0;
+            overflow: hidden;
+
+            .img-carousel-list {
+                .clearfix();
+                .reset-list();
+                margin-top: 15px;
+
+                .img-carousel-item {
+                    height: 160px;
+                    float: left;
+
+                    a {
+                        display: block;
+                        height: 160px;
+                        img {
+                            width: 220px;
+                        }
+                    }
+                }
+            }
+
+            .flex-direction-nav {
+                a {
+                    height: 50px;
+                    top: 47%;
+                }
+            }
+        }
+    }
+}
+
+
+
+.content-title {
+    .clearfix();
+    border-bottom: 1px solid #ececec;
+    height: 27px;
+    line-height: 27px;
+
+    span {
+        .ellipsis();
+        display: block;
+        max-width: 250px;
+        float: left;
+        font-size: 16px;
+        color: @default-font-color;
+        font-weight: bold;
+        border-bottom: 1px solid @default-font-color;
+        margin-bottom: -1px;
+    }
+
+    em {
+        float: right;
+        font-size: 12px;
     }
 }

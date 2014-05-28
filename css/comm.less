@@ -142,11 +142,17 @@ a {
                             }
                         }
 
-                        &:hover {
+                        &:hover,
+                        &.hover {
                             .sub-menu {
                                 .transition(opacity 0.2s);
                                 visibility: visible;
                                 opacity: 1;
+                            }
+
+                            a {
+                                background-color: #f4f4f4;
+                                text-decoration: none;
                             }
                         }
 
@@ -180,6 +186,7 @@ a {
                                
                                 a {
                                     .size(150px, 40px);
+                                    background-color: @default-main-color;
                                     text-align: left;
                                     line-height: 40px;
                                     color: #fff;

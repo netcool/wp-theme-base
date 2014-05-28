@@ -5,6 +5,7 @@
 	</div>
 </div>
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/dep/FlexSlider/jquery.flexslider-min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/global.min.js"></script>
 <?php wp_footer(); ?>
 </body>

@@ -5,6 +5,7 @@
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
+	<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/dep/FlexSlider/flexslider.css" type="text/css" />
 	<?php wp_head(); ?>
 </head>
 <body>
