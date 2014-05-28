@@ -53,12 +53,11 @@ a {
 
 // 组件样式 按钮
 .m-btn {
-    height: 26px;
-    line-height: 24px;
+    height: 30px;
+    line-height: 30px;
     vertical-align: middle;
-    border: none;
+    border: 0;
     background: @default-main-color;
-    border: 1px solid @default-main-color;
     color: #fff;
     text-align: center;
     padding: 0 20px;
@@ -66,13 +65,7 @@ a {
     cursor: pointer;
 
     &:hover {
-        border: 1px solid @default-main-border-color;
-        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
-    }
-
-    &:active {
-        border: 1px solid @default-main-border-color;
-        box-shadow: none;
+        background-color: @default-main-dark-color;
     }
 
     &[disabled] {
@@ -93,50 +86,108 @@ a {
     border: 1px solid #cccccc;
     background: #fff;
     outline: none;
-    padding: 3px;
+    padding: 5px;
     vertical-align: middle;
     height: 18px;
-    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.05);
 
     &:focus {
-        box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.15);
         border: 1px solid @default-main-color;
     }
 }
 
 // 头部样式
 #header {
+    border-top: 2px solid @default-main-color;
+
     #inner-header {
         .size(980px, 70px);
         .clearfix();
         margin: 0 auto;
 
         #logo {
-            .size(200px, 70px);
+            .size(130px, 70px);
             line-height: 70px;
             float: left;
             font-size: 32px;
+            font-weight: bold;
+
+            a {
+                .size(130px, 70px);
+                .background('@{base-url}/logo.png', '@{base-url}/logo@2x.png');
+                background-position: 0 50%;
+                display: block;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
         }
 
         #nav {
             float: left;
+            margin-left: 50px;
             height: 70px;
+
             .menu-nav-container {
-                ul {
+                .menu {
                     .reset-list();
 
-                    li {
+                    .menu-item {
                         float: left;
+                        position: relative;
+
+                        &.current-menu-item {
+                            a {
+                                color: @default-link-color;
+                            }
+                        }
+
+                        &:hover {
+                            .sub-menu {
+                                .transition(opacity 0.2s);
+                                visibility: visible;
+                                opacity: 1;
+                            }
+                        }
 
                         a {
-                            .size(100px, 70px);
                             display: block;
+                            height: 70px;
+                            padding: 0 30px;
                             line-height: 70px;
                             text-align: center;
+                            color: @default-font-color;
 
                             &:hover {
                                 background-color: #f4f4f4;
                                 text-decoration: none;
+                            }
+                        }
+
+                        .sub-menu {
+                            .reset-list();
+                            overflow: hidden;
+                            position: absolute;
+                            top: 70px;
+                            left: 0;
+                            visibility: hidden;
+                            opacity: 0;
+
+                            .menu-item {
+                                .size(150px, 40px);
+                                float: none;
+                                background-color: @default-main-color;
+                               
+                                a {
+                                    .size(150px, 40px);
+                                    text-align: left;
+                                    line-height: 40px;
+                                    color: #fff;
+
+                                    &:hover {
+                                        background-color: @default-main-dark-color;
+                                    }
+                                }
                             }
                         }
                     }
@@ -148,6 +199,15 @@ a {
             .size(300px, 70px);
             line-height: 70px;
             float: right;
+            text-align: right;
+
+            #search-input {
+                width: 200px;
+            }
+
+            #search-btn {
+                margin-left: -5px;
+            }
         }
     }
 }

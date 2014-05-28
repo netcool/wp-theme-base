@@ -18,7 +18,7 @@
 }
 
 //单行文字超出显示省略号
-.ellipse-overflow() {
+.ellipsis() {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -34,6 +34,27 @@
     height: @height;
 }
 
+// 支持视网膜的图片背景
+.background(@imgurl) {
+    background: url(@imgurl) no-repeat;
+}
+
+.background(@imgurl, @imgurl2x) {
+    background: url(@imgurl) no-repeat;
+    background-image: -webkit-image-set(
+        url(@imgurl) 1x,
+        url(@imgurl2x) 2x
+    );
+}
+
+// 鼠标不选中
+.no-select() {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
 // 圆角
 .border-radius (@radius: 5px) {
     -webkit-border-radius: @radius;
@@ -47,7 +68,12 @@
             background-clip: padding;
 }
 
-.border-radiuses (@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+.border-radiuses (@topleft: 0, @topright: 0, @bottomright: 0, @bottomleft: 0) {
+    -webkit-border-top-left-radius: @topleft;
+       -moz-border-top-left-radius: @topleft;
+        -ms-border-top-left-radius: @topleft;
+            border-top-left-radius: @topleft;
+
     -webkit-border-top-right-radius: @topright;
        -moz-border-top-right-radius: @topright;
         -ms-border-top-right-radius: @topright;
@@ -62,11 +88,6 @@
        -moz-border-bottom-left-radius: @bottomleft;
         -ms-border-bottom-left-radius: @bottomleft;
             border-bottom-left-radius: @bottomleft;
-
-    -webkit-border-top-left-radius: @topleft;
-       -moz-border-top-left-radius: @topleft;
-        -ms-border-top-left-radius: @topleft;
-            border-top-left-radius: @topleft;
 
     -webkit-background-clip: padding;
        -moz-background-clip: padding;

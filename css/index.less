@@ -1,61 +1,92 @@
 @import 'css/comm.less';
 
+// banner样式
 #banner {
-    height: 350px;
-    background-color: #eee;
+    .background('@{base-url}/banner.jpg', '@{base-url}/banner@2x.jpg');
+    background-position: 50% 0;
+    background-color: #000;
+    height: 400px;
 
     #inner-banner {
-        .size(980px, 350px);
+        .size(980px, 400px);
+        margin: 0 auto;
     }
 }
 
+// 内容样式
 #content {
     .clearfix();
     width: 980px;
-    margin: 20px auto;
+    margin: 30px auto 40px;
 
     #content-l,
     #content-c,
     #content-r {
         width: 310px;
         float: left;
+        font-size: 14px;
 
         .content-title {
-            span {
-                font-size: 14px;
+            .clearfix();
+            border-bottom: 1px solid #ececec;
+            height: 27px;
+            line-height: 27px;
 
+            span {
+                .ellipsis();
+                display: block;
+                max-width: 250px;
+                float: left;
+                font-size: 16px;
+                color: @default-font-color;
+                font-weight: bold;
+                border-bottom: 1px solid @default-font-color;
+                margin-bottom: -1px;
             }
 
             em {
                 float: right;
+                font-size: 12px;
             }
-        }
-
-        .content-main {
-
-        }
-
-        ul {
-            list-style: inside square;
-
-            li {
-                .time {
-                    float: right;
-                    color: #999;
-                }
-            }
-        }
+        } 
     }
 
     #content-l {
         margin-right: 25px;
+
+        .content-main {
+            margin-top: 10px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
     }
 
     #content-c {
         margin-right: 25px;
-    }
 
-    #content-r {
+        ul {
+            .reset-list();
+            margin-top: 5px;
 
+            li {
+                .ellipsis();
+                height: 35px;
+                line-height: 35px;
+                border-bottom: 1px dotted #f4f4f4;
+
+                a {     
+                    color: @default-font-color;
+
+                    &:hover {
+                        color: @default-link-color;
+                    }
+                }
+
+                .time {
+                    float: right;
+                    color: #aaa;
+                }
+            }
+        }
     }
 }

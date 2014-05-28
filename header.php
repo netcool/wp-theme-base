@@ -11,20 +11,21 @@
 <div id="header">
 	<div id="inner-header">
 		<div id="logo">
-			<a href="<?php bloginfo('url'); ?>">
-				<!-- logo图片 -->
-				LOGO
-				<!-- <img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="" /> -->
-			</a>
+			<a href="<?php bloginfo('url'); ?>"></a>
 		</div>
 		<div id="nav">
 			<!-- 导航，需在设置外观->菜单中设置 -->
-			<?php wp_nav_menu(array('menu' => 'nav','depth' => 1)); ?>
+			<?php wp_nav_menu(
+				array(
+					'menu' => 'nav', // nav的名称, 在外观->菜单里添加名为'nav'的菜单即可
+					'depth' => 2 // 1: 不显示下拉框, 2: 显示下拉框
+				)
+			); ?>
 		</div>
 		<div id="search" class="clearfix">
-			<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<input type="text" class="m-input" id="search-input" name="s" />
-				<input type="submit" class="m-btn" id="search-button" value="搜索" />
+			<form method="get" id="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<input placeholder="请输入关键字" type="text" class="m-input" id="search-input" name="s" />
+				<input type="submit" class="m-btn" id="search-btn" value="搜索" />
 			</form>
 		</div>
 	</div>	

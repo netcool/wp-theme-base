@@ -8,6 +8,23 @@ function coolwp_remove_open_sans() {
 }    
 add_action( 'init', 'coolwp_remove_open_sans' );   
 
+//设置摘要的字数
+function new_excerpt_length($length) {
+    return 175;
+}
+add_filter('excerpt_length', 'new_excerpt_length');
+
+// 设置摘要结束为省略号样式
+function new_excerpt_more($more) {
+    return '......';
+}
+// 设置摘要结束为查更多的链接
+// function new_excerpt_more($more) {
+//     global $post;
+//     return '… <a href="'. get_permalink($post->ID) . '">' . '更多&gt;&gt;' . '</a>';
+// }
+add_filter('excerpt_more', 'new_excerpt_more');
+
 // 注册菜单和小工具
 if (function_exists('register_sidebar')) {
     register_sidebar(array(
@@ -18,7 +35,7 @@ if (function_exists('register_sidebar')) {
     ));
 }
 
-//只显示文章第一张图片
+// 只显示文章第一张图片
 function catch_that_image() {
     global $post, $posts;
     $first_img = '';
@@ -32,7 +49,7 @@ function catch_that_image() {
     return $first_img;
 }
 
-//面包屑导航
+// 面包屑导航
 function breadcrumbs() {
     $delimiter = '&nbsp<em>&gt;</em>&nbsp';
     $name = 'Home'; //text for the 'Home' link
