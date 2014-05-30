@@ -4,6 +4,8 @@
 </div>
 <div id="content">
     <div class="content-row">
+        <!-- 为了展示功能下面的内容都是从后端传过来 -->
+        <!-- 有时候根据实际情况可以直接在前端写死 -->
         <div id="content-left">
             <!-- 展示id为1的文章内容 -->
             <?php query_posts('page_id=2'); ?>
@@ -25,9 +27,9 @@
             <ul class="content-main">
                 <?php while (have_posts()) : the_post(); ?>
                 <li>
-                    <em class="time"><?php the_time('Y-m-d') ?></em>
                     <a href="<?php the_permalink() ?>">
-                        <?php the_title(); ?>
+                        <span><?php the_title(); ?></span>
+                        <em class="time"><?php the_time('Y-m-d') ?></em>
                     </a>
                 </li>
                 <?php endwhile;wp_reset_query(); ?>
@@ -35,7 +37,6 @@
         </div>
         <div id="content-right">
             <!-- 展示id为2的文章内容 -->
-            <!-- 可以在functions.php中定义默认图片的src， -->
             <?php query_posts("page_id=2"); ?>
             <h2 class="content-title">
                 <span>公司理念</span>
@@ -47,6 +48,9 @@
         </div>
     </div>
     <div class="content-row" id="content-bottom">
+        <!-- 展示分类为1,2,3的文章内的第一张图片, 一共展示12张 -->
+        <!-- 可以在functions.php中定义默认图片的src， -->
+        <?php query_posts("showposts=12&cat=1,2,3"); ?>
         <h2 class="content-title">
             <span>产品图片</span>
             <em class="more"><a href="<?php bloginfo('url'); ?>/?cat=1,2,3">更多&gt;&gt;</a></em>

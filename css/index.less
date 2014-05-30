@@ -28,7 +28,7 @@
     #content-right {
         width: 310px;
         float: left;
-        font-size: 14px;
+        font-size: 13px;
 
         div.content-main {
             margin-top: 10px;
@@ -41,23 +41,37 @@
             margin-top: 5px;
 
             li {
-                .ellipsis();
                 height: 35px;
                 line-height: 35px;
-                border-bottom: 1px dotted #f4f4f4;
 
-                a {     
+                a { 
+                    .clearfix();
+                    display: block;
                     color: @default-font-color;
 
                     &:hover {
+                        background-color: #fafafa;
                         color: @default-link-color;
+                        text-decoration: none;
+                    }
+
+                    span {
+                        .ellipsis();
+                        display: block;
+                        width: 210px;
+                        float: left;
+                    }
+
+                    .time {
+                        display: block;
+                        width: 90px;
+                        float: right;
+                        color: #aaa;
+                        text-align: right;
                     }
                 }
 
-                .time {
-                    float: right;
-                    color: #aaa;
-                }
+                
             }
         }
     }

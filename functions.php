@@ -8,11 +8,13 @@ function coolwp_remove_open_sans() {
 }    
 add_action( 'init', 'coolwp_remove_open_sans' );   
 
+
 //设置摘要的字数
 function new_excerpt_length($length) {
-    return 175;
+    return 200;
 }
 add_filter('excerpt_length', 'new_excerpt_length');
+
 
 // 设置摘要结束为省略号样式
 function new_excerpt_more($more) {
@@ -25,6 +27,7 @@ function new_excerpt_more($more) {
 // }
 add_filter('excerpt_more', 'new_excerpt_more');
 
+
 // 注册菜单和小工具
 if (function_exists('register_sidebar')) {
     register_sidebar(array(
@@ -34,6 +37,7 @@ if (function_exists('register_sidebar')) {
         'after_title' => '</h2>',
     ));
 }
+
 
 // 只显示文章第一张图片
 function catch_that_image() {
@@ -50,10 +54,11 @@ function catch_that_image() {
     return $first_img;
 }
 
+
 // 面包屑导航
 function breadcrumbs() {
-    $delimiter = '&nbsp<em>&gt;</em>&nbsp';
-    $name = 'Home'; //text for the 'Home' link
+    $delimiter = '&nbsp;<em>&gt;</em>&nbsp;';
+    $name = '首页'; // 首页显示的文案
     $currentBefore = '';
     $currentAfter = '';
     if ( !is_home() && !is_front_page() || is_paged() ) {
@@ -115,26 +120,26 @@ function breadcrumbs() {
             echo $currentAfter;
         }
         elseif ( is_search() ) {
-            echo $currentBefore . 'Search result: ' . get_search_query() . '' . $currentAfter;
+            echo $currentBefore . '搜索结果: ' . get_search_query() . '' . $currentAfter;
         }
         elseif ( is_tag() ) {
-            echo $currentBefore . 'Posts tagged ';
+            echo $currentBefore . '标签: ';
             single_tag_title();
             echo '' . $currentAfter;
         }
         elseif ( is_author() ) {
             global $author;
             $userdata = get_userdata($author);
-            echo $currentBefore . 'Articles posted by ' . $userdata->display_name . $currentAfter;
+            echo $currentBefore . '作者: ' . $userdata->display_name . $currentAfter;
         }
         elseif ( is_404() ) {
-            echo $currentBefore . 'Error 404' . $currentAfter;
+            echo $currentBefore . '错误: 404' . $currentAfter;
         }
 
         if ( get_query_var('paged') ) {
-            if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-            echo __('Page') . ' ' . get_query_var('paged');
-            if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
+            if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' - ';
+            echo __('页数: ') . ' ' . get_query_var('paged');
+            if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo '';
         }
         echo '';
     }

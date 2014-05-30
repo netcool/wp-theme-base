@@ -15,7 +15,7 @@
 			<a href="<?php bloginfo('url'); ?>"></a>
 		</div>
 		<div id="nav">
-			<!-- 导航，需在设置外观->菜单中设置 -->
+			<!-- 导航, 需在设置外观->菜单中设置 -->
 			<?php wp_nav_menu(
 				array(
 					'menu' => 'nav', // nav的名称, 在外观->菜单里添加名为'nav'的菜单即可

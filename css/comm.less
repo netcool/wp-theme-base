@@ -209,7 +209,7 @@ a {
             text-align: right;
 
             #search-input {
-                width: 200px;
+                width: 205px;
             }
 
             #search-btn {
@@ -230,5 +230,86 @@ a {
         margin: 0 auto;
         text-align: center;
         color: #999;
+    }
+}
+
+// 内容样式
+.container {
+    margin: 0 auto 40px auto;
+
+    // 面包屑导航
+    .crumb {
+        width: 930px;
+        height: 50px;
+        padding: 0 25px;
+        margin: 0 auto;
+        background-color: #f4f4f4;
+        line-height: 50px;
+        border-top: 2px solid #ececec;
+
+        a {
+            color: @default-font-color;
+        }
+    }
+
+    .content {
+        .clearfix();
+        width: 980px;
+        margin: 30px auto 0 auto;
+
+        .content-left {
+            width: 670px;
+            float: left;
+        }
+
+        .content-right {
+            width: 280px;
+            float: right;
+        }
+    }
+}
+
+// 原生翻页样式
+.post_nav {
+    a {
+        display: inline-block;
+        padding: 10px 20px;
+        border: 1px solid #ececec;
+        color: @default-font-color;
+
+        &:hover {
+            border-color: @default-main-color;
+            text-decoration: none;
+        }
+    }
+}
+
+// 侧边栏样式
+.sidebar {
+    background-color: #f4f4f4;
+    margin-bottom: 20px;
+    padding: 15px 0 20px 0;
+
+    h2 {
+        padding: 0 20px 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    ul {
+        list-style-position: inside;
+        padding: 0 20px 0 25px;
+
+        li {
+            .ellipsis();
+
+            a {
+                color: @default-font-color;
+            }
+
+            em {
+                color: @default-main-color
+            }
+        }
     }
 }
