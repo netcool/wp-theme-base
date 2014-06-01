@@ -1,0 +1,125 @@
+@import 'css/comm.less';
+
+// 头部样式
+#header {
+    border-top: 2px solid @default-main-color;
+
+    #inner-header {
+        .size(980px, 70px);
+        .clearfix();
+        margin: 0 auto;
+
+        #logo {
+            .size(130px, 70px);
+            line-height: 70px;
+            float: left;
+            font-size: 32px;
+            font-weight: bold;
+
+            a {
+                .size(130px, 70px);
+                .background('@{base-url}/logo.png', '@{base-url}/logo@2x.png');
+                background-position: 0 50%;
+                display: block;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        #nav {
+            float: left;
+            margin-left: 50px;
+            height: 70px;
+
+            .menu-nav-container {
+                .menu {
+                    .reset-list();
+
+                    .menu-item {
+                        float: left;
+                        position: relative;
+
+                        &.current-menu-item {
+                            a {
+                                color: @default-link-color;
+                            }
+                        }
+
+                        &:hover,
+                        &.hover {
+                            .sub-menu {
+                                .transition(opacity 0.2s);
+                                visibility: visible;
+                                opacity: 1;
+                            }
+
+                            a {
+                                background-color: #f4f4f4;
+                                text-decoration: none;
+                            }
+                        }
+
+                        a {
+                            display: block;
+                            height: 70px;
+                            padding: 0 30px;
+                            line-height: 70px;
+                            text-align: center;
+                            color: @default-font-color;
+
+                            &:hover {
+                                background-color: #f4f4f4;
+                                text-decoration: none;
+                            }
+                        }
+
+                        .sub-menu {
+                            .reset-list();
+                            overflow: hidden;
+                            position: absolute;
+                            top: 70px;
+                            left: 0;
+                            visibility: hidden;
+                            opacity: 0;
+
+                            .menu-item {
+                                .size(150px, 40px);
+                                float: none;
+                                background-color: @default-main-color;
+                               
+                                a {
+                                    .size(150px, 40px);
+                                    background-color: @default-main-color;
+                                    text-align: left;
+                                    line-height: 40px;
+                                    color: #fff;
+
+                                    &:hover {
+                                        background-color: @default-main-dark-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #search {
+            .size(300px, 70px);
+            line-height: 70px;
+            float: right;
+            text-align: right;
+
+            #search-input {
+                width: 205px;
+            }
+
+            #search-btn {
+                margin-left: -5px;
+            }
+        }
+    }
+}

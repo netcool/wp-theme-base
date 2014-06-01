@@ -21,7 +21,7 @@
                 <?php endwhile; else: ?>
                     <div class="post-no-data">
                         <h2 class="post-title">对不起 :(</h2>
-                        <div class="post-info">暂时没有文章</div>
+                        <div class="post-info">没有搜索到响应文章</div>
                     </div>
                 <?php endif; ?>
             </ul>

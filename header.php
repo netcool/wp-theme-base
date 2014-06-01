@@ -1,7 +1,10 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title><?php wp_title( '-', true, 'right' ); ?></title>
+	<title>
+		<?php bloginfo('name'); ?>
+		<?php wp_title( '-', true, '' ); ?>
+	</title>
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />

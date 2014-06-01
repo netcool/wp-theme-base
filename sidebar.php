@@ -14,7 +14,7 @@
             <?php while (have_posts()) : the_post(); ?>
             <li>
                 <em class="time"><?php the_time('Y-m-d') ?></em>&nbsp;
-                <a href="<?php the_permalink() ?>">
+                <a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
                     <span><?php the_title(); ?></span>
                 </a>
             </li>

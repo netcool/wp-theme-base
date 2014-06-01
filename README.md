@@ -19,6 +19,7 @@ wordpress前端通用模板使用方法
 + footer.php 公共尾部
 + index.php 首页
 + category.php 分类页
++ search.php 搜索页
 + archive.php 存档页
 + single.php 文章页
 + page.php 静态页
@@ -26,8 +27,12 @@ wordpress前端通用模板使用方法
 + css
     + style.less 样式文件
     + comm.less 公共样式
+    + module.less 组件样式
     + index.less 首页样式
+    + header.less 头部样式
+    + footer.less 底部样式
     + category.less 分类页样式
+    + search.less 搜索页样式
     + archive.less 存档页样式
     + single.less 文章页样式
     + page.less 静态页样式

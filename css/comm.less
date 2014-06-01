@@ -19,220 +19,6 @@ a {
     }
 }
 
-// 组件样式 表格
-.m-table {
-    width: 100%;
-    font-size: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
-    border-collapse: collapse;
-    line-height: 1.4;
-    margin-bottom: 15px;
-
-    thead {
-        background: #fafafa;
-    }
-
-    tbody {
-        background-color: #fff;
-
-        tr:hover {
-            background-color: #ffffcc;
-        }
-    }
-
-    td,
-    th {
-        border: 1px solid #ddd;
-        padding: 7px;
-        word-wrap: break-word;
-        word-break: break-all;
-        overflow: hidden;
-    }
-}
-
-// 组件样式 按钮
-.m-btn {
-    height: 30px;
-    line-height: 30px;
-    vertical-align: middle;
-    border: 0;
-    background: @default-main-color;
-    color: #fff;
-    text-align: center;
-    padding: 0 20px;
-    outline: none;
-    cursor: pointer;
-
-    &:hover {
-        background-color: @default-main-dark-color;
-    }
-
-    &[disabled] {
-        background: #ccc;
-        border: #ccc;
-
-        &:hover {
-            border: #aaa;
-            box-shadow: none;
-            cursor: not-allowed;
-        }
-    }
-}
-
-// 组件样式 输入框
-.m-input {
-    font-size: 12px;
-    border: 1px solid #cccccc;
-    background: #fff;
-    outline: none;
-    padding: 5px;
-    vertical-align: middle;
-    height: 18px;
-
-    &:focus {
-        border: 1px solid @default-main-color;
-    }
-}
-
-// 头部样式
-#header {
-    border-top: 2px solid @default-main-color;
-
-    #inner-header {
-        .size(980px, 70px);
-        .clearfix();
-        margin: 0 auto;
-
-        #logo {
-            .size(130px, 70px);
-            line-height: 70px;
-            float: left;
-            font-size: 32px;
-            font-weight: bold;
-
-            a {
-                .size(130px, 70px);
-                .background('@{base-url}/logo.png', '@{base-url}/logo@2x.png');
-                background-position: 0 50%;
-                display: block;
-
-                &:hover {
-                    text-decoration: none;
-                }
-            }
-        }
-
-        #nav {
-            float: left;
-            margin-left: 50px;
-            height: 70px;
-
-            .menu-nav-container {
-                .menu {
-                    .reset-list();
-
-                    .menu-item {
-                        float: left;
-                        position: relative;
-
-                        &.current-menu-item {
-                            a {
-                                color: @default-link-color;
-                            }
-                        }
-
-                        &:hover,
-                        &.hover {
-                            .sub-menu {
-                                .transition(opacity 0.2s);
-                                visibility: visible;
-                                opacity: 1;
-                            }
-
-                            a {
-                                background-color: #f4f4f4;
-                                text-decoration: none;
-                            }
-                        }
-
-                        a {
-                            display: block;
-                            height: 70px;
-                            padding: 0 30px;
-                            line-height: 70px;
-                            text-align: center;
-                            color: @default-font-color;
-
-                            &:hover {
-                                background-color: #f4f4f4;
-                                text-decoration: none;
-                            }
-                        }
-
-                        .sub-menu {
-                            .reset-list();
-                            overflow: hidden;
-                            position: absolute;
-                            top: 70px;
-                            left: 0;
-                            visibility: hidden;
-                            opacity: 0;
-
-                            .menu-item {
-                                .size(150px, 40px);
-                                float: none;
-                                background-color: @default-main-color;
-                               
-                                a {
-                                    .size(150px, 40px);
-                                    background-color: @default-main-color;
-                                    text-align: left;
-                                    line-height: 40px;
-                                    color: #fff;
-
-                                    &:hover {
-                                        background-color: @default-main-dark-color;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        #search {
-            .size(300px, 70px);
-            line-height: 70px;
-            float: right;
-            text-align: right;
-
-            #search-input {
-                width: 205px;
-            }
-
-            #search-btn {
-                margin-left: -5px;
-            }
-        }
-    }
-}
-
-// 底部样式
-#footer {
-    border-top: 1px solid #ececec;
-    background-color: #f4f4f4;
-    padding: 10px 0 20px;
-
-    #inner-footer {
-        width: 980px;
-        margin: 0 auto;
-        text-align: center;
-        color: #999;
-    }
-}
-
 // 内容样式
 .container {
     margin: 0 auto 40px auto;
@@ -252,6 +38,7 @@ a {
         }
     }
 
+    // 主要内容部分
     .content {
         .clearfix();
         width: 980px;
@@ -265,6 +52,110 @@ a {
         .content-right {
             width: 280px;
             float: right;
+        }
+    }
+}
+
+// 文章列表样式
+.post-list {
+    .reset-list();
+
+    .post-item {
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #ececec;
+
+        .time {
+            color: #999;
+        }
+
+        .post-title {
+            .ellipsis();
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 1.8;
+
+            a {
+                color: #333;
+            }
+        }
+
+        .post-main {
+            font-size: 13px;
+        }
+
+        .more {
+            display: inline-block;
+            margin-top: 10px;
+        }
+    }
+}
+
+// 没有文章列表的样式
+.post-no-data {
+    .post-title {
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 1.8;
+        color: #333;
+    }
+}
+
+// 文章样式
+.post-entry {
+    .post-title {
+        .ellipsis();
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 1.8;
+        color: #333;
+    }
+
+    .time {
+        color: #999;
+    }
+
+    .post-main {
+        margin-top: 10px;
+        font-size: 14px;
+        color: @default-font-color;
+
+        // 段落样式
+        p {
+            text-indent: 2em;
+            margin: 1em 0;
+        }
+
+        // 列表样式
+        ul,
+        ol {
+            list-style-position: inside;
+            margin: 1em 0;
+
+            ul,
+            ol {
+                padding-left: 1em;
+            }
+        }
+
+        // 链接样式
+        a {
+            color: @default-link-color;
+        }
+
+        // 引用样式
+        blockquote,
+        // 代码样式
+        pre {
+            .clearfix();
+            background-color: #fafafa;
+            padding: 1em;
+            margin: 1em 0;
+        }
+
+        // 表格样式
+        table {
+            .m-table();
         }
     }
 }
@@ -298,10 +189,10 @@ a {
 
     ul {
         list-style-position: inside;
-        padding: 0 20px 0 25px;
 
         li {
             .ellipsis();
+            padding: 0 20px 0 25px;
 
             a {
                 color: @default-font-color;

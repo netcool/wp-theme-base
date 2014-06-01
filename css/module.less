@@ -1,0 +1,89 @@
+@import 'css/comm.less';
+
+// 组件样式 表格
+.m-table() {
+    width: 100%;
+    font-size: 12px;
+    text-align: left;
+    border-collapse: collapse;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+
+    thead {
+        background: #fafafa;
+
+        th {
+            font-weight: bold;
+        }
+    }
+
+    tbody {
+        background-color: #fff;
+    }
+
+    td,
+    th {
+        border: 1px solid #ddd;
+        padding: 0.7em;
+        word-wrap: break-word;
+        word-break: break-all;
+        overflow: hidden;
+    }
+}
+
+// 组件样式 按钮
+.m-btn() {
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    border: 0;
+    background: @default-main-color;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: @default-main-dark-color;
+    }
+
+    &[disabled] {
+        background: #ccc;
+        border: #ccc;
+
+        &:hover {
+            border: #aaa;
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+    }
+}
+
+// 组件样式 输入框
+.m-input() {
+    font-size: 12px;
+    border: 1px solid #cccccc;
+    background: #fff;
+    outline: none;
+    padding: 5px;
+    vertical-align: middle;
+    height: 18px;
+
+    &:focus {
+        border: 1px solid @default-main-color;
+    }
+}
+
+.m-table {
+    .m-table();
+}
+
+.m-btn {
+    .m-btn();
+}
+
+.m-input {
+    .m-input();
+}
