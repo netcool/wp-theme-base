@@ -13,6 +13,10 @@ wordpress前端通用模板使用方法
 3. 前端环境的目录为：{wordpress根目录}/wp-content/themes/{wordpress主题名}/
 4. 在前端环境的目录下执行：`grunt`即可编译less + 压缩编译后的css + 压缩js，如果文件发送变化，也将实时编译
 
+### 推荐安装的组件
+
+1. [pagenavi](http://wordpress.org/plugins/wp-pagenavi)
+
 ### 目录结构
 
 + header.php 公共头部

@@ -21,14 +21,14 @@
                 <?php endwhile; else: ?>
                     <div class="post-no-data">
                         <h2 class="post-title">对不起 :(</h2>
-                        <div class="post-info">没有搜索到响应文章</div>
+                        <div class="post-info">没有搜索到相应文章</div>
                     </div>
                 <?php endif; ?>
             </ul>
             <div class="page-nav">
             <!-- 需要安装pagenavi插件，否则使用原生的翻页 -->
             <?php if(function_exists('wp_pagenavi')){ wp_pagenavi(); } else { ?>
-                <div class="post_nav"><?php posts_nav_link(' ', '上一页', '下一页'); ?></div>
+                <div class="post-nav"><?php posts_nav_link(' ', '上一页', '下一页'); ?></div>
             <?php } ?>
             </div>
         </div>

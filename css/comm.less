@@ -160,17 +160,44 @@ a {
     }
 }
 
-// 原生翻页样式
-.post_nav {
-    a {
-        display: inline-block;
-        padding: 10px 20px;
-        border: 1px solid #ececec;
-        color: @default-font-color;
+.page-nav {
+    // 原生翻页样式
+    .post-nav {
+        a {
+            display: inline-block;
+            padding: 7px 14px;
+            border: 1px solid #ececec;
+            color: @default-font-color;
 
-        &:hover {
-            border-color: @default-main-color;
-            text-decoration: none;
+            &:hover {
+                border-color: @default-main-color;
+                text-decoration: none;
+            }
+        }
+    }
+
+    // pagenavi翻页样式
+    .wp-pagenavi {
+        span,
+        a {
+            padding: 7px 14px;
+            border: 1px solid #ececec;
+            color: @default-font-color;
+        }
+
+        span {
+            &.current {
+                border: 1px solid @default-main-color;
+                background-color: @default-main-color;
+                color: #fff;
+            }
+        }
+
+        a {
+            &:hover {
+                border-color: @default-main-color;
+                text-decoration: none;
+            }
         }
     }
 }
