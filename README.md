@@ -19,39 +19,38 @@ wordpress前端通用模板使用方法
 
 ### 目录结构
 
-+ header.php 公共头部
-+ footer.php 公共尾部
-+ index.php 首页
-+ category.php 分类页
-+ search.php 搜索页
-+ archive.php 存档页
-+ single.php 文章页
-+ page.php 静态页
-+ ...
-+ css
-    + style.less 样式文件
-    + comm.less 公共样式
-    + module.less 组件样式
-    + index.less 首页样式
-    + header.less 头部样式
-    + footer.less 底部样式
-    + category.less 分类页样式
-    + search.less 搜索页样式
-    + archive.less 存档页样式
-    + single.less 文章页样式
-    + page.less 静态页样式
-    + ...
-    + inc
-        + reset.less 样式初始化文件
-        + util.less 样式工具库文件
-        + var.less 样式变量库文件
-+ style.less 样式文件
-+ style.css 编译压缩后的样式文件
-+ img 
-    + 图片
-+ js
-    + jquery.min.js
-    + global.js js文件
-    + global.min.js 压缩后的js文件
-+ package.json 依赖库配置文件
-+ Gruntfile.js Gruntjs配置文件
+    ├───  header.php
+    ├───  footer.php
+    ├───  index.php
+    ├───  category.php
+    ├───  search.php
+    ├───  archive.php
+    ├───  single.php
+    ├───  page.php
+    ├───  functions.php
+    ├──┬  css/
+    │  ├───  style.less 样式文件入口
+    │  ├───  comm.less 公共样式
+    │  ├───  module.less 组件样式
+    │  ├───  header.less 头部样式
+    │  ├───  footer.less 底部样式
+    │  ├───  index.less 首页样式
+    │  ├──┬  inc/
+    │     ├───  reset.less 样式初始化文件
+    │     ├───  util.less 样式工具库文件
+    │     ├───  var.less 样式变量库文件
+    ├───  style.less 样式文件
+    ├───  style.css 编译压缩后的样式文件
+    ├──┬ img/
+    │  ├───  logo.png
+    │  ├───  logo@2x.png 适配视网膜屏的图片
+    │  ├───  banner.png
+    │  ├───  banner@2x.png 适配视网膜屏的图片
+    ├──┬ js/
+    │  ├───  jquery.min.js
+    │  ├───  global.js
+    │  ├───  global.min.js
+    ├───  package.json nodejs包配置文件
+    ├───  Gruntfile.js Gruntjs配置文件
+    ├───  README.md 文档
+    ├───  screenshot.png wordpress主题缩略图
